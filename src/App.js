@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import ProductsProvider from "./context/ProductsContext"; // Change to default import
+import ProductsProvider from "./context/ProductsContext";
 import ProductList from "./components/ProductList";
 import NotFoundPage from "./components/NotFoundPage";
 import HomePage from "./components/HomePage";
