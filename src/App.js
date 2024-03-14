@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { ProductsProvider } from "./context/ProductsContext";
+import ProductsProvider from "./context/ProductsContext"; // Change to default import
 import ProductList from "./components/ProductList";
 import NotFoundPage from "./components/NotFoundPage";
 import HomePage from "./components/HomePage";
-
 import "./App.css";
 
 function App() {
@@ -13,6 +12,7 @@ function App() {
       <ProductsProvider>
         <Router>
           <div>
+            {/* Navigation Links */}
             <nav>
               <ul>
                 <li>
@@ -27,10 +27,12 @@ function App() {
               </ul>
             </nav>
 
+            {/* Routes for different pages */}
             <Routes>
               <Route path="/products" element={<ProductList />} />
               <Route path="/" element={<HomePage />} />
               <Route path="*" element={<NotFoundPage />} />{" "}
+              {/* Catch all other route */}
             </Routes>
           </div>
         </Router>

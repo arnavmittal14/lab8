@@ -1,9 +1,8 @@
-// ProductsContext.js
 import React, { createContext, useContext, useState } from "react";
 
 const ProductsContext = createContext();
 
-const useProductsContext = () => useContext(ProductsContext);
+export const useProductsContext = () => useContext(ProductsContext);
 
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
@@ -32,5 +31,4 @@ const ProductsProvider = ({ children }) => {
   );
 };
 
-export default ProductsProvider;
-export { useProductsContext };
+export default ProductsProvider; // Default export ProductsProvider

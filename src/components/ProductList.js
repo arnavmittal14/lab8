@@ -1,14 +1,18 @@
 import React, { useEffect } from "react";
-import { useProductsContext } from "../context/ProductsContext";
 import { fetchProducts } from "../services/apiService";
+import { useProductsContext } from "../context/ProductsContext"; // Change to named import
 
 const ProductList = () => {
   const { products, setProducts } = useProductsContext();
 
   useEffect(() => {
     const getProducts = async () => {
-      const data = await fetchProducts();
-      setProducts(data.products);
+      try {
+        const data = await fetchProducts();
+        setProducts(data.products);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     };
     getProducts();
   }, [setProducts]);
